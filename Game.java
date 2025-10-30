@@ -84,7 +84,7 @@ public class Game
         System.out.println("You are " + currentRoom.getDescription());
         System.out.print("Exits: ");
         
-        printLocationInfo();
+        currentRoom.getExitString();
         
         System.out.println();
     }
@@ -159,7 +159,7 @@ public class Game
             System.out.println("You are " + currentRoom.getDescription());
             System.out.print("Exits: ");
             
-            printLocationInfo();
+            currentRoom.getExitString();
             
             System.out.println();
         }

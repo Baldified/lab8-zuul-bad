@@ -19,7 +19,7 @@ public class Room
     private Room southExit;
     private Room eastExit;
     private Room westExit;
-
+    private String cmd;
     /**
      * Create a room described "description". Initially, it has no exits. 
      * "description" is something like "a kitchen" or "an open court yard".
@@ -76,7 +76,44 @@ public class Room
     {
         return description;
     }
-    public String getExitString(){
-          
+    
+    /** Return a description of the room’s exits,
+     * for example, "Exits: north west".
+     * @return A description of the available exits. 
+     */
+     
+    public String getExitString() {
+        /*String north = null;
+        String east = null;
+        String south = null;
+        String west = null;
+        if(getExit("north") != null) {
+                north += "north ";
+            }
+        if(getExit("east") != null) {
+                east += "east ";
+            }
+        if(getExit("south") != null) {
+                south += "south ";
+            }
+        if(getExit("west") != null) {
+                west += "west ";
+            }
+            cmd += (north + east + south + west);
+        return cmd;*/
+        
+        if(getExit("north") != null) {
+                System.out.print("north ");
+            }
+        if(getExit("east") != null) {
+                System.out.print("east ");
+            }
+        if(getExit("south") != null) {
+                System.out.print("south ");
+            }
+        if(getExit("west") != null) {
+                System.out.print("west ");
+            }
+            return null;
     }
 }
