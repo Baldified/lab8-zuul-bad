@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /**
  * Class Room - a room in an adventure game.
  *
@@ -15,10 +17,11 @@
 public class Room 
 {
     private String description;
-    private Room northExit;
-    private Room southExit;
-    private Room eastExit;
-    private Room westExit;
+    //private Room northExit;
+    //private Room southExit;
+    //private Room eastExit;
+    //private Room westExit;
+    private HashMap<String, Room> exits;
     private String cmd;
     /**
      * Create a room described "description". Initially, it has no exits. 
@@ -28,6 +31,7 @@ public class Room
     public Room(String description) 
     {
         this.description = description;
+        exits = new HashMap<String, Room>();
     }
 
     /**
@@ -41,30 +45,30 @@ public class Room
     public void setExits(Room north, Room east, Room south, Room west) 
     {
         if(north != null) {
-            northExit = north;
+            exits.put("north", north);
         }
         if(east != null) {
-            eastExit = east;
+            exits.put("east", east);
         }
         if(south != null) {
-            southExit = south;
+            exits.put("south", south);
         }
         if(west != null) {
-            westExit = west;
+            exits.put("west", west);
         }
     }
-    public Room getExit(String direction) {
+    public HashMap<String, Room> getExit(String direction) {
         if(direction.equals("north")) {
-            return northExit;
+            return exits;
         }
         if(direction.equals("east")) {
-            return eastExit;
+            return exits;
         }
         if(direction.equals("south")) {
-            return southExit;
+            return exits;
         }
         if(direction.equals("west")) {
-            return westExit;
+            return exits;
         }
         return null;
     }
@@ -115,5 +119,8 @@ public class Room
                 System.out.print("west ");
             }
             return null;
+    }
+    public void setExit(String direction, Room neighbor) {
+        exits.put(direction , neighbor);  
     }
 }
