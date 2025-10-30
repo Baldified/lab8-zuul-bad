@@ -42,7 +42,7 @@ public class Room
      * @param south The south exit.
      * @param west The west exit.
      */
-    public void setExits(Room north, Room east, Room south, Room west) 
+    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down) 
     {
         if(north != null) {
             exits.put("north", north);
@@ -56,19 +56,31 @@ public class Room
         if(west != null) {
             exits.put("west", west);
         }
+        if(up != null) {
+            exits.put("up", up);
+        }
+        if(down != null) {
+            exits.put("down", down);
+        }
     }
-    public HashMap<String, Room> getExit(String direction) {
+    public Room getExit(String direction) {
         if(direction.equals("north")) {
-            return exits;
+            return exits.get("north");
         }
         if(direction.equals("east")) {
-            return exits;
+            return exits.get("east");
         }
         if(direction.equals("south")) {
-            return exits;
+            return exits.get("south");
         }
         if(direction.equals("west")) {
-            return exits;
+            return exits.get("west");
+        }
+        if(direction.equals("up")) {
+            return exits.get("up");
+        }
+        if(direction.equals("down")) {
+            return exits.get("down");
         }
         return null;
     }
@@ -118,7 +130,13 @@ public class Room
         if(getExit("west") != null) {
                 System.out.print("west ");
             }
-            return null;
+        if(getExit("up") != null) {
+                System.out.print("up ");
+            }
+        if(getExit("down") != null) {
+                System.out.print("down ");
+            }
+        return null;
     }
     public void setExit(String direction, Room neighbor) {
         exits.put(direction , neighbor);  
