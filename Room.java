@@ -1,5 +1,5 @@
 import java.util.HashMap;
-
+import java.util.Set;
 /**
  * Class Room - a room in an adventure game.
  *
@@ -99,46 +99,19 @@ public class Room
      */
      
     public String getExitString() {
-        /*String north = null;
-        String east = null;
-        String south = null;
-        String west = null;
-        if(getExit("north") != null) {
-                north += "north ";
-            }
-        if(getExit("east") != null) {
-                east += "east ";
-            }
-        if(getExit("south") != null) {
-                south += "south ";
-            }
-        if(getExit("west") != null) {
-                west += "west ";
-            }
-            cmd += (north + east + south + west);
-        return cmd;*/
+        Set<String> exitString;
         
-        if(getExit("north") != null) {
-                System.out.print("north ");
-            }
-        if(getExit("east") != null) {
-                System.out.print("east ");
-            }
-        if(getExit("south") != null) {
-                System.out.print("south ");
-            }
-        if(getExit("west") != null) {
-                System.out.print("west ");
-            }
-        if(getExit("up") != null) {
-                System.out.print("up ");
-            }
-        if(getExit("down") != null) {
-                System.out.print("down ");
-            }
-        return null;
+        exitString = exits.keySet();
+        for (String that: exitString) {
+            System.out.print(that + " ");
+        }
+        
+        return "";
     }
     public void setExit(String direction, Room neighbor) {
         exits.put(direction , neighbor);  
+    }
+    public String getLongDescription() {
+        return "You are " + description + ".\n" + getExitString();
     }
 }

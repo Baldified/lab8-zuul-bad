@@ -34,4 +34,4 @@ ANSWERS
    4 rooms
    no map drawn
    
-2
+9. It returns a Set view of the keys contained in this map.
