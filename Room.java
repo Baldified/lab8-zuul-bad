@@ -102,6 +102,7 @@ public class Room
         Set<String> exitString;
         
         exitString = exits.keySet();
+        //System.out.println(exitString);
         for (String that: exitString) {
             System.out.print(that + " ");
         }

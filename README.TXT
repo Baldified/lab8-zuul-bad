@@ -35,3 +35,5 @@ ANSWERS
    no map drawn
    
 9. It returns a Set view of the keys contained in this map.
+
+13. it changes the state of the room object.
